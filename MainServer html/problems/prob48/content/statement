@@ -1,0 +1,4 @@
+You're given an integer.
+Determined whether it's perfect or not!
+A perfect number is a number that if you sum up all its divisors, they add up to that number!
+Example: 28 = 14+7+4+2+1

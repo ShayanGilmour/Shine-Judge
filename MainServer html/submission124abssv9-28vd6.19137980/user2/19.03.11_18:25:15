@@ -1,0 +1,34 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+#include <string>
+using std::string;
+
+void Reversing( string word, int sPoint, int ePoint )
+{
+	/* this function prints the letters before the starting point */
+	for ( int counter = 0 ; counter < sPoint ; counter++ )
+		cout << word[counter];
+	/* this function prints the reversed part */
+	for ( int counter = ePoint ; counter >= sPoint ; counter-- )
+		cout << word[counter];
+	/* and finally this function print the rest of the word, if left */
+	cout << word.substr(ePoint+1) << endl ;
+}
+
+int main()
+{
+	int sPoint;
+	int ePoint;
+	string word;
+	cout << "Your String: ";
+	cin >> word;
+	cout << "Starting Reverse: ";
+	cin >> sPoint;
+	cout << "Ending Reverse at: ";
+	cin >> ePoint;
+	Reversing( word, sPoint, ePoint );
+	return 0;
+}

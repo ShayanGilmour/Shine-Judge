@@ -1,0 +1,4 @@
+You'll be given an string. Calculate its abjad code!
+Each character of the original word, will get 2 characters in the input string. (See the sample)
+If 2 characters have the same symbol in the English alphabet, consider the one with lower abjad number.
+The inputs will be easy :D

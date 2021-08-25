@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="mainV6.css" />
+    <script src="prism.js"></script>
+    <link rel="shortcut icon" href="pictures/logo_favicon.png">
+</head>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="box">
+            <div class="box header">
+                <h2>Shine On, You Crazy Diamond</h2>
+            </div>
+	    
+            <div class="box main">
+		<br>
+                <div class="Logoarea">
+                    <img src="pictures/logo_main.png">
+                </div>
+               <!-- <div class="sitename">
+                    <b>Shine Judge</b>
+                </div>-->
+                <div class="buttonarea">
+                    <div class="button" style="margin-left: 10%">
+                        <a href="problems/index.html"><span class="clickable">Problems</span></a>
+                    </div>
+                    <div class="button">
+                        <a href="readme/index.html"><span class="clickable">ReadMe</span></a>
+                    </div>
+                    <div class="button" style="margin-left: 10%;margin-top:10px;width:465px;">
+                        <a href="projects/index.html"><span class="clickable">Projects</span></a>
+                    </div>
+                    <div class="button" style="margin-left: 10%;margin-top:10px;width:465px;">
+                        <a href="projects/index.html"><span class="clickable">Projects</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blank"></div>
+<!--
+        <div class="box">
+                <div class="box header">
+                    <h2>Announcements</h2>
+                </div>
+                <div class="box main">
+                    <ul>
+                        <li>Reload the pages. So your browser would load the new section.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+-->
+        <div class="blank"></div>
+    </div>
+</body>
+</html>

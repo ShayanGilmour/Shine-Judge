@@ -1,0 +1,328 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+}
+html 
+{
+    font-family: sans-serif;
+}
+.header
+{
+    padding: 0;
+}
+.header h1 
+{
+    color: #ffffff;
+    background-color: #5D0000;
+    font-size: 17pt;
+    text-align: center;
+    padding: 5px 0px;
+}
+.container
+{
+    max-width: 600px;
+    margin: auto;
+}
+.blank
+{
+    height: 80px;
+}
+.box
+{
+    box-shadow: 0px 1px 3px #aaaaaa;
+    border-radius: 5px;
+}
+.box .header
+{
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background: #5D0000;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.box .beader
+{
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background: #c4bd56;
+    color: #568dc4;
+    padding: 5px;
+}
+
+.box .header h2
+{
+    font-weight: 200;
+    font-size: 20px;
+}
+.box .main
+{
+    background: #e9e8e8;
+    border-radius: 0px 0px 5px 5px;
+    padding: 15px 10px;
+    margin-bottom: 35px;
+}
+.Logoarea
+{
+    margin-bottom: 20px;
+}
+.Logoarea img
+{
+    left: 50%;
+    display: block;
+    position: relative;
+    transform: translate(-50%,0);
+    width: 300px;
+}
+.sitename 
+{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.buttonarea 
+{
+    width: 100%;
+    margin: 20px auto;
+    display: inline-block;
+    margin-top: 25px;
+}
+.button 
+{
+    float: left;
+    background: #5D0000;
+    width: 35%;
+    margin: 0 5%;
+    text-align: center;
+    /* padding: 20px 0; */
+    border-radius: 5px;
+    font-size: 35px;
+}
+.button:hover
+{
+    background-color: #fff;
+    border-color: aquamarine;
+    /* border:1px solid #5D0000; */
+    box-shadow: 0 0 0 2px #5D0000;
+}
+.button:hover a
+{
+    color: #5D0000;
+}
+.button a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+.clickable
+{
+    display: block;
+    height: 80px;
+    line-height: 80px;
+}
+.box .main ul
+{
+    list-style-type: none;
+}
+.SmallLogo img
+{
+    width: 130px;
+    padding: 0 50%;
+    transform: translate(-50%,0);
+    left: 50%;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+.MediumLogo img
+{
+    width: 180px;
+    padding: 0 50%;
+    transform: translate(-50%,0);
+    left: 50%;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+.LargeLogo img
+{
+    width: 200px;
+    padding: 0 50%;
+    transform: translate(-50%,0);
+    left: 50%;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+.problem
+{
+    display: block;
+    width: 95%;
+    float: none;
+    margin: 0 2.5% 15px 2.5%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+
+}
+.problempage 
+{
+    margin: 5px;
+}
+.lastbutton
+{
+    margin-bottom: 0;
+}
+.content
+{
+    font-weight: 600;
+}
+.testbox
+{
+    margin: 0px 10%;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+.inputheader
+{
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    box-shadow: 0 2px #5D0000;
+}
+.terminal
+{
+    padding: 15px 10px;
+    color: #5D0000;
+    font-family: monospace;
+    box-shadow: 0 2px #5D0000;
+    font-size: 16px;
+}
+.outputheader
+{
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    box-shadow: 0 2px #5D0000;
+}
+.heading
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.submitcontent
+{
+    font-family: monospace;
+    width: 97%;
+    background: #f9f8f8;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px;
+    height: 500px;
+}
+.submitcontent:focus
+{
+    outline: none;
+}
+.submitbutton
+{
+    margin-top: 10px;
+    display: block;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%,0);
+    font-size: 26px;
+    background: #5D0000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+}
+.submitbutton:hover
+{
+    background: #fff;
+    color: #5D0000;
+    box-shadow: 0 0 0 2px #5D0000;
+}
+.submitbutton:focus
+{
+    outline: none;
+}
+.pageButtonArea
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0 40%;
+}
+.pageButton
+{
+    float: center;
+    background: #5D0000;
+    margin: 0px 2%;
+    color: #ffffff;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    transform: translate(-50%,0);
+    border-radius: 5px;
+}
+.pageButton:hover
+{
+    background: #fff;
+    color: #5D0000;
+    box-shadow: 0 0 0 2px #5D0000;
+}
+.pageButton:focus
+{
+    outline: none;
+}
+.inputArea
+{
+    margin-bottom: 30px;
+}
+.inputArea h4
+{
+    font-size:30px;
+    font-family:fantasy;
+    text-align:center;
+    padding: 5px 0 15px 0;
+}
+.codeInput
+{
+    background: #e9e8e8;
+    border-radius: 3px;
+    padding: 10px;
+}
+.codeArea
+{
+    margin-bottom: 30px;
+}
+.codeArea h4
+{
+    font-size:30px;
+    font-family:fantasy;
+    text-align:center;
+    padding: 5px 0 15px 0;
+}
+.hide 
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.code
+{
+    border-radius: 3px;
+}
+

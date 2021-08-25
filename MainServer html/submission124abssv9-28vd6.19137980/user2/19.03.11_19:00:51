@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+#include<iomanip>
+using std::setprecision;
+
+//This function calculates the square root with the ancient algorithm
+//with the precision of 0.00001
+double mysqrt(double number, double precision = 0.00001)
+{
+    double ans = number;
+    
+    while ((ans - number / ans) > precision) 
+        ans = (ans + number / ans) / 2;
+
+	
+    return ans;
+}
+
+
+int main()
+{
+	double number;
+	cin >> number;
+	cout << mysqrt(number) << endl ;
+	return 0;
+}

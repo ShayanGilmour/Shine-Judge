@@ -1,0 +1,2 @@
+You are given 2 arrays a and b with length n. Array a contains ints. Array b contains floating point numbers and sum of all elements of b is equal to 1.
+You Should find index k such that for each a[i] smaller than a[k],sum of b[i]'s should be less than 0.5 and for each a[i] bigger than a[k],sum of b[i]'s should be smaller or EQUAL to 0.5.

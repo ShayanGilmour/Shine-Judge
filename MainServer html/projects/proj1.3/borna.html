@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/mainV6.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism.css" />
+    <script src="/css/prism.js"></script>
+    <link rel="shortcut icon" href="/pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="/pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.3</b></font></center><br>
+
+        <br><center><font size=6 style="font-family: 'Times New Roman'"><b>Borna's</b></font></center>
+        
+        <div class="codeArea">
+            <div class="code">
+                <pre>
+                <code class="language-py hide" style="border-radius:3px;">
+
+from curses import wrapper
+import curses
+
+
+def contents(file_name):
+    result = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            result.append(line.replace("\n", ""))
+    return result
+
+
+def csv_extractor(data_lines):
+    data = list()
+    for l in data_lines:
+        data.append(l.split(","))
+    for i in range(len(data)):
+        haveq = [False for _ in range(len(data[i]))]
+        for j in range(len(data[i])):
+            if data[i][j].count("\"") == 1:
+                haveq[j] = 1
+        for j in range(len(data[i])):
+            if haveq[j]:
+                while not haveq[j + 1]:
+                    data[i] = data[i][:j] + [data[i][j] + "," + data[i][j + 1]] + data[i][j + 2:]
+                    haveq.pop(j + 1)
+                else:
+                    data[i] = data[i][:j] + [data[i][j] + "," + data[i][j + 1]] + data[i][j + 2:]
+                    data[i][j] = data[i][j][1:-1]
+                    break
+
+    return data
+
+
+def sort_col(data, max_width):
+    max_col = [0] * len(data[0])
+    j = 0
+    for l in data:
+        for i in range(len(l)):
+            if max_col[i] < len(l[i]):
+                max_col[i] = len(l[i])
+            if max_col[i] >= max_width:
+                max_col[i] = max_width
+        j += 1
+
+    return max_col
+
+
+def print_line(stdscr, max_col, max_width):
+    pline = "+"
+    pline += "".ljust(sum(max_col) + len(max_col) - 1, "-") + "+"
+    stdscr.addstr(pline)
+    y, x = stdscr.getyx()
+    stdscr.move(y + 1, 0)
+    stdscr.refresh()
+
+
+def print_title(stdscr, titles, max_col, max_width, complete_line):
+    print_line(stdscr, max_col, max_width)
+    line_num = 1
+    for item in titles:
+        if len(item) / max_width - line_num > 0:
+            line_num += int(len(item) / max_width - line_num) + 1
+    if line_num == 1:
+        pline = "|"
+        for i in range(len(titles)):
+            pline += titles[i].ljust(max_col[i]) + "|"
+        # print(pline)
+        if complete_line == stdscr.getyx()[0]:
+            stdscr.addstr(pline, curses.A_BOLD)
+        else:
+            stdscr.addstr(pline)
+        y, x = stdscr.getyx()
+        stdscr.move(y + 1, 0)
+        stdscr.refresh()
+    elif complete_line == stdscr.getyx()[0]:
+        tmps = list()
+        for _ in range(line_num):
+            tmps.append("|")
+        for i in range(line_num):
+            for j in range(len(titles)):
+                length = max_col[j]
+                if max_col[j] * i >= len(titles[j]) or max_col[j] + i * max_col[j] >= len(titles[j]):
+                    length = len(titles[j]) - (i - 1) * max_col[j]
+                tmps[i] += titles[j][i * max_col[j]:length + i * max_col[j]].ljust(max_col[j]) + "|"
+            stdscr.addstr(tmps[i], curses.A_BOLD)
+            y, x = stdscr.getyx()
+            stdscr.move(y + 1, 0)
+            stdscr.refresh()
+    else:
+        pline = "|"
+        for i in range(len(titles)):
+            if max_col[i] < len(titles[i]):
+                pline += titles[i][:max_col[i] - 3] + "..." + "|"
+            else:
+                pline += titles[i].ljust(max_col[i]) + "|"
+        stdscr.addstr(pline)
+        y, x = stdscr.getyx()
+        stdscr.move(y + 1, 0)
+        stdscr.refresh()
+    print_line(stdscr, max_col, max_width)
+
+
+def print_data(stdscr, data, max_col, max_width, complete_line):
+    data = data[1:]
+    k = 1
+    for l in data:
+        line_num = 1
+        for item in l:
+            if len(item) / max_width - line_num > 0:
+                line_num += int(len(item) / max_width - line_num) + 1
+        if line_num == 1:
+            pline = "|"
+            for i in range(len(l)):
+                pline += l[i].ljust(max_col[i]) + "|"
+            if complete_line == stdscr.getyx()[0]:
+                stdscr.addstr(pline, curses.A_BOLD)
+            else:
+                stdscr.addstr(pline)
+            y, x = stdscr.getyx()
+            stdscr.move(y + 1, 0)
+            stdscr.refresh()
+        elif complete_line == stdscr.getyx()[0]:
+            tmps = list()
+            for _ in range(line_num):
+                tmps.append("|")
+            for i in range(line_num):
+                for j in range(len(l)):
+                    length = max_col[j]
+                    if max_col[j] * i >= len(l[j]) or max_col[j] + i * max_col[j] >= len(l[j]):
+                        length = len(l[j]) - (i - 1) * max_col[j]
+                    tmps[i] += l[j][i * max_col[j]:length + i * max_col[j]].ljust(max_col[j]) + "|"
+                stdscr.addstr(tmps[i], curses.A_BOLD)
+                y, x = stdscr.getyx()
+                stdscr.move(y + 1, 0)
+                stdscr.refresh()
+        else:
+            pline = "|"
+            for i in range(len(l)):
+                if max_col[i] < len(l[i]):
+                    pline += l[i][:max_col[i] - 3] + "..." + "|"
+                else:
+                    pline += l[i].ljust(max_col[i]) + "|"
+            stdscr.addstr(pline)
+            y, x = stdscr.getyx()
+            stdscr.move(y + 1, 0)
+            stdscr.refresh()
+        k += 1
+        print_line(stdscr, max_col, max_width)
+
+
+filename = input()
+max_width = int(input())
+datalines = contents(filename)
+data = csv_extractor(datalines)
+maxcol = sort_col(data, max_width)
+Y, X = 0, 0
+
+
+def main(stdscr):
+    global Y, X
+    while True:
+        stdscr.clear()
+        stdscr.bkgdset(" ",curses.COLOR_BLACK)
+        print_title(stdscr, data[0], maxcol, max_width, Y)
+        print_data(stdscr, data, maxcol, max_width, Y)
+        stdscr.move(Y, X)
+        if stdscr.getch() == curses.KEY_DOWN:
+            Y += 1
+        elif stdscr.getch() == curses.KEY_UP:
+            Y -= 1
+        elif stdscr.getch() == curses.KEY_LEFT:
+            X -= 1
+        elif stdscr.getch() == curses.KEY_RIGHT:
+            X += 1
+        else:
+            break
+
+
+wrapper(main)
+		</code>
+                </pre>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>
+
+

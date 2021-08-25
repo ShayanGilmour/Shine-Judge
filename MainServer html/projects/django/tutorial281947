@@ -1,0 +1,23 @@
+virtualenv --python=python3 .esm-folder
+#cd .esm-folder
+#ls
+#ls bin
+#cd ..
+source .esm-folder/bin/activate
+#which python3
+pip install django
+
+django-admin startproject shalgham
+ls
+cd shalgham
+
+./manage.py startapp fileuploader #In shalgham directory
+ls
+ls fileuploader
+cd fileuploader
+touch urls.py #The file is given
+
+#fileuploader/views.py is given
+
+./manager.py runserver #IP: 127.0.0.1:8000
+

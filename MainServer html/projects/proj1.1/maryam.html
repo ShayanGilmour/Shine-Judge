@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/mainV6.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism.css" />
+    <script src="/css/prism.js"></script>
+    <link rel="shortcut icon" href="/pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="/pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.1</b></font></center><br>
+
+        <br><center><font size=6 style="font-family: 'Times New Roman'"><b>Maryam's</b></font></center>
+        
+        <div class="codeArea">
+            <div class="code">
+                <pre>
+                <code class="language-py hide" style="border-radius:3px;">	
+import csv
+def contests(file_name):
+    result=[]
+    with open(file_name,'r') as f:
+        for line in f:
+            result.append(line.split(","))
+    return result
+a=contests('test.csv')
+def p(a):
+    m=[]
+    for i in range (len(a[0])):
+        max=0
+        for j in range (len(a)):
+            if ((len(a[j][i]))>max):
+                max=(len(a[j][i]))
+        m.append(max)
+    return m
+def s(a):
+    s=0
+    for i in a :
+        s=s+i
+    return s
+def li(a):
+    l='+'+ ('-' * a) + '-----+'
+    return l
+def sp(a,b):
+    m=a + (' ' * (b - len(a)))
+    return m
+def pri(a,b,c):
+    print(c)
+    for i in range (len(a)):
+        for j in range (len(a[0])-1):
+            print('|' , end = '')
+            print (sp(a[i][j] , b[j]) , end = '' )
+        else:
+            print('|',end='')
+            t = ""
+            for k in range(len(a[i][len(a[0])-1])):
+                if a[i][len(a[0])-1][k] != '\n':
+                    t = t + a[i][len(a[0])-1][k]
+            print(sp(t , b[len(a[0]) - 1]) , end = '')
+            print('|')
+        print(c) 
+b = p(a)
+pri(a,b,li(s(b)))
+
+		</code>
+                </pre>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>
+
+

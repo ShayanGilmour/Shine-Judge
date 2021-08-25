@@ -1,0 +1,15 @@
+a = input()
+mark = [False]*len(a)
+for i in range(len(a)):
+    if (a[i] >= 'a' and a[i] <= 'z') or (a[i] >= 'A' and a[i] <= 'Z'):
+        print(a[i], end='')
+        mark[i]=True
+print('')
+for i in range(len(a)):
+    if a[i] >= '0' and a[i] <= '9':
+        mark[i]=True
+        print(a[i], end='')
+print('')
+for i in range(len(a)):
+    if mark[i] == False:
+        print(a[i], end='')

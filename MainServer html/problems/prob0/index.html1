@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../../mainV2.css" />
+    <!-- <script src="main.js"></script> -->
+    <link rel="shortcut icon" href="../../pictures/logo_favicon.png">
+
+</head>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+	    <a href="../">
+            <img src="../../pictures/logo_main.png">
+	    </a>        
+	</div>
+
+	<center>
+	<font size = "2"><b>Time limit: 0.1 seconds &nbsp;&nbsp; Memory Limit: Fair</b><br><br></font>
+	</center>
+
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 26px;"><b>Sums</b></h2>
+            </div>
+            <div class="box main">
+                <p class="content">
+			You are given a and b. print a+b.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 18px;">Input</h2>
+            </div>
+            <div class="box main" style="margin-bottom: 15px">
+                <p class="content">
+			You get a and b in separated lines.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 18px;">Output</h2>
+            </div>
+            <div class="box main">
+                <p class="content">
+                    Print the sum of those two integers.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 18px;">Sample Tests</h2>
+            </div>
+            <div class="box main">
+                <div class="testbox">
+                    <div class="inputheader">Input</div>
+                    <div class="terminal">
+                        <p>
+                            1<br>2
+                        </p>
+                    </div>
+                    <div class="outputheader">Output</div>
+                    <div class="terminal" style="box-shadow: none;">
+                        <p>
+                            3
+                        </p>
+                    </div>
+                </div>
+
+                <div class="testbox" style="margin-bottom: 0;">
+                    <div class="inputheader">Input</div>
+                    <div class="terminal">
+                        <p>
+                            10<br>5
+                        </p>
+                    </div>
+                    <div class="outputheader">Output</div>
+                    <div class="terminal" style="box-shadow: none;">
+                        <p>
+                            15
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="submitpart">
+            <div class="heading">Your Code:</div>
+            <form action="tofile.php" method="post">
+                <textarea class="submitcontent" name="content" maxlength="30000"></textarea>
+                <input class="submitbutton" type="submit">
+            </form>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>

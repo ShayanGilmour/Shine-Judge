@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../../mainV5.css">
+    <!-- <script src="main.js"></script> -->
+    <link rel="shortcut icon" href="../../pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="../../pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.1</b></font></center><br>
+
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 22px;">Input</h2>
+            </div>
+            <div class="box main" style="margin-bottom: 15px">
+        	<div class="codeInput">
+		    <a href="statement.jpg"><font color="000"><b>Statement</b></font></a><br><br>
+               	    <p>
+			product_id,phone,title,description,purchase_id,buyer_name<br>
+			1,09122965123,oven,clean and perfect,3d345kfx,hasan<br>
+			2,09382461163,fridge,beautiful & spacious & assured,xcvd932,leila<br>
+			3,09322935123,desk,just a wooden desk,i3xd3z3o,asghar<br>
+        	    </p>
+		    <br><a href="input1.csv" download>input1.csv</a> &emsp; <a href="input2.csv" download>input2.csv</a>
+
+
+	        </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box header">
+                <h2 style="font-size: 22px;">Submited Codes</h2>
+            </div>
+
+            <div class="box main">
+                <div class="buttonarea problempage">
+                    <div class="button problem">
+                        <a href="borna.html"><span class="clickable problem">Borna</span></a>
+                    </div>
+                    <div class="button problem">
+                        <a href="asha.html"><span class="clickable problem">Asha</span></a>
+                    </div>
+                    <div class="button problem">
+                        <a href="maryam.html"><span class="clickable problem">Maryam</span></a>
+                    </div>
+                    <div class="button problem">
+                        <a href="shayan.html"><span class="clickable problem">Shayan</span></a>
+                    </div>
+
+                </div>                
+
+            </div>
+        </div>
+
+        <div class="blank"></div>
+    </div>
+
+
+
+
+</body></html>

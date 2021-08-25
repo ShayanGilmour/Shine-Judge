@@ -1,0 +1,12 @@
+//prob42
+#include <bits/stdc++.h>
+#include <math.h>
+
+using namespace std;
+int main ()
+{
+      double a;
+      cin >> a;
+      a = sqrt(a);
+      cout << setprecision(10) << a << endl;
+}

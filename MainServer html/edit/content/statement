@@ -1,0 +1,5 @@
+You'll be given n and q.
+
+If q = 1: Then you'll be given a permutation of numbers 1 to n; You should calculate it's position if we sort all the permutations of numbers 1 to n.
+
+If q = 2: Then you'll be given an integers x. You should print a x-th permutation if we sort all the permutations of number 1 to n.

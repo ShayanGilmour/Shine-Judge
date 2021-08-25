@@ -1,0 +1,5 @@
+You'll be given two string A and B.
+Find the greatest number i, which B*i is a sub-string of A.
+
+Note for the Sample:
+abb*2: abbabb

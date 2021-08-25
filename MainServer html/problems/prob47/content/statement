@@ -1,0 +1,5 @@
+You're given two integers a and b.
+Print all 'good' numbers between a and b inclusive.
+Number N is considered good iff:
+∃x,y; x and y are prime. x+y = N.
+Lol...

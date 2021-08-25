@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/mainV6.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism.css" />
+    <script src="/css/prism.js"></script>
+    <link rel="shortcut icon" href="/pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="/pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.3</b></font></center><br>
+
+        <br><center><font size=6 style="font-family: 'Times New Roman'"><b>Asha's</b></font></center>
+        
+        <div class="codeArea">
+            <div class="code">
+                <pre>
+                <code class="language-py hide" style="border-radius:3px;">
+import curses
+from curses import wrapper
+import time
+
+def getContents(file_name):
+    result = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            if(line!='\n'):
+                result.append(lineBreaker(line[:-1]))
+    print(result)
+    return result
+def lineBreaker(inputStr):
+#breakes every line into columns
+    result=[]
+    cotFlag=False
+    lastCam=-1
+    for i in range(len(inputStr)):
+        if(inputStr[i]=='\"'):
+            if(cotFlag==True):
+                result.append(inputStr[lastCam+2:i])
+                lastCam=i+1
+                cotFlag=False
+            else:
+                cotFlag=True
+        elif(inputStr[i]==',' and cotFlag==False and i!=lastCam):
+            result.append(inputStr[lastCam+1:i])
+            lastCam=i
+    result.append(inputStr[lastCam+1:])
+    return result  
+def printEmptyLine(a,stdscr):
+    stdscr.addstr('+')
+    for i in range(a-2):
+        stdscr.addstr('-')
+    stdscr.addstr('+\n')
+def printContent(maxWidth,fullWidth,contents,width,position,stdscr):
+    #normal printing if the width doesnt extend
+    if(maxWidth>=fullWidth):
+        for content in contents:
+            printEmptyLine(fullWidth,stdscr)
+            for i in range(len(content)):
+                stdscr.addstr('|')
+                stdscr.addstr(content[i].ljust(width[i]," "))
+            stdscr.addstr('|\n')
+        printEmptyLine(fullWidth,stdscr)
+    else:
+        #bl=vertical postition of Breaked Line
+        bl=0
+        for i in range(len(width)):
+            #find bl
+            if(width[i]>width[bl]):
+                bl=i
+        #bl width is the width that breaked line should have
+        blWidth=width[bl]- (fullWidth-maxWidth)
+        for content in contents:
+            printEmptyLine(maxWidth,stdscr)
+            #first line
+            for i in range(len(content)):
+                stdscr.addstr('|')
+                if(i==bl):
+                    if(len(content[i])<=blWidth or position == contents.index(content)):
+                        stdscr.addstr(content[i][:blWidth].ljust(blWidth," "))
+                    else:
+                        stdscr.addstr(content[i][:blWidth-3])
+                        stdscr.addstr('...')
+                else:
+                    stdscr.addstr(content[i].ljust(width[i]," "))
+            stdscr.addstr('|')
+            if position == contents.index(content):
+                stdscr.addstr('<=')
+            stdscr.addstr('\n')
+            if position == contents.index(content):
+                ct=blWidth
+            else:
+                ct=blWidth-3
+            if position == contents.index(content):
+                while(ct<len(content[bl])):
+                    for i in range(len(content)):
+                        stdscr.addstr('|')
+                        if(i==bl):
+                            stdscr.addstr(content[i][ct:ct+blWidth].ljust(blWidth," "))
+                        else:
+                            stdscr.addstr(''.ljust(width[i]," "))
+                    stdscr.addstr("|")
+                    stdscr.addstr('\n')
+                    ct+=blWidth
+        printEmptyLine(maxWidth,stdscr)
+        
+def main(stdscr):
+    contents=getContents((inp+'.csv'))
+    #width is the max width of every column
+    width=[0 for i in contents[0]]
+    fullWidth=0
+    for i in range(len(width)):
+        for j in contents:
+            if(len(j[i])>width[i]):
+                width[i]=len(j[i])
+        fullWidth+=width[i]
+    #full width is the width of the table
+    fullWidth+=len(width)+1
+    position=0
+    height=len(contents)-1
+    stdscr.clear()
+    while(True):
+        arrow=stdscr.getch()
+        curses.flushinp()
+        stdscr.clear()
+        if arrow==ord('q'):
+            exit()
+        elif arrow == curses.KEY_UP:
+            position-=1
+        elif arrow == curses.KEY_DOWN:
+            position+=1
+        if position>height :
+            position=0
+        elif position<0 :
+            position=height
+        printContent(maxWidth,fullWidth,contents,width,position,stdscr)
+inp=input("+--------------------Welcome to CSV Beautifier--------------------+\nplease enter the address of .csv file:  ")
+maxWidth=int(input("Enter MaxWidth:  "))
+print("!  Press q to quit   !")
+time.sleep(4)
+wrapper(main)
+
+		</code>
+                </pre>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,3 @@
+2 integers. n and q.
+If q = 1, then you'll be given a permutation.
+If q = 2, then you'll be given an integer.

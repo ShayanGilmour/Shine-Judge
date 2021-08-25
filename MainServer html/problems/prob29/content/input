@@ -1,0 +1,3 @@
+In the first line N, a single integer.
+In the next N lines, each line containing N integers splited with white space, as Matrix elements.
+In the last line Key, a single integer.

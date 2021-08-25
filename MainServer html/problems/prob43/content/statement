@@ -1,0 +1,2 @@
+You're given an string, and two integers a and b.
+Print the sub-string from a-th character to b-th character in reverse.

@@ -1,0 +1,6 @@
+You get t: The time someone's using the power (in seconds.)
+You get p: The price for 1KWh (meaning the amount of energy being used in an hour)
+You get c: The rate of the consumption (in KW.)
+You get l: The time limit for using the power. In the extended time, the price is doubled.
+
+Note: Watt = J/s.

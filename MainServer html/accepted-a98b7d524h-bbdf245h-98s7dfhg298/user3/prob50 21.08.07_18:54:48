@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+string d1[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+string d2[] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+string d3[] = {"", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+string d4[] = {"novemvigintillion", "octovigintillion", "septenvigintillion", "sexvigintillion", "quinvigintillion", "quattuorvigintillion",
+	"trevigintillion", "duovigintillion", "unvigintillion", "vigintillion", "novemdecillion", "octodecillion", "septendecillion", "sexdecillion", "quindecillion", "quattuordecillion",
+	"tredecillion", "duodecillion", "undecillion", "decillion", "nonillion", "octillion", "septillion", "sextillion", "quintillion", "quadrillion", "trillion", "billion", "million", "thousand", ""};
+
+string n;
+void Echo(int x)
+{
+	if (x == 0)
+		return;
+
+	if (x/100)
+		cout << d1[x/100 -1] << " hundred ";
+	x%=100;
+
+	if (x/10 == 1)
+	{
+		cout << d2[x%10] << ' ';
+		return ;
+	}
+
+	if (x/10)
+		cout << d3[x/10 -1] << ' ';
+	x%=10;
+
+	if (x)
+		cout << d1[x-1] << ' ';
+
+}
+
+int Get(int x)
+{
+	int ans = 0;
+	for (int i = x*3; i < x*3+3; ++i)
+	{ ans *= 10; ans += (int)(n[i]-'0');}
+	return ans;
+}
+
+int main()
+{
+	cin >> n;
+	if (n.size() == 1 and n[0] == '0')
+		return cout << "zero", 0;
+
+	while ((int)n.size() < 93)
+		n = "0"+n;
+
+	int tmp;
+	for (int i = 0; i < 31; ++i)
+	{
+		tmp = Get(i);
+		Echo(tmp);
+		if (tmp)
+			cout << d4[i] << ' ';
+	}
+
+}

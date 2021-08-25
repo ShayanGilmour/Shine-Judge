@@ -1,0 +1,5 @@
+You'll be given a graph with n vertices and m edges.
+Calculate the minimum number of colors which the edges of the graph can be colored with those number of colors;
+Which for any two adjacent edges, the colors are different.
+
+Two edges are adjacent iff (lol) they have a common vertex.

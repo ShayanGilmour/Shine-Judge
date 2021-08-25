@@ -1,0 +1,2 @@
+You Are Given Number n.You Should Print Every Summation of Prime Numbers That Equals To n in Ascending Order.Given n Print All Increasing Sequences of Prime Numbers That Sum Up To n.
+Sequence A(a[1],a[2],...,a[k]) Is Smaller Than Sequence B(b[1],b[2],..,b[m]) If Either A Is A Prefix Of B Or For The Smallest i That a[i]!=b[i],a[i]<(b[i])

@@ -1,0 +1,4 @@
+You're given an string. You should print 3 lines (could be empty.)
+In the first line, print all the letters appeared in the word.
+Second line all the numbers.
+Third line all the punctuations.

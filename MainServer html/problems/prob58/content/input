@@ -1,0 +1,3 @@
+In the first line, 4 integers n, m, p and q.
+Then a n x m matrix, representing matrix A.
+Then a p x q matrix, representing matrix B.

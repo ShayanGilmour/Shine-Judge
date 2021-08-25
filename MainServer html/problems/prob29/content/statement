@@ -1,0 +1,2 @@
+You're given an N*N Matrix, and an integer as the key. Check if the given key is in the matrix, using the ternary search method for matrix. (As told in the class)
+Note that the judge won't check your searching method, but you can't use the function "in".

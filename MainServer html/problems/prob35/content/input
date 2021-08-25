@@ -1,0 +1,2 @@
+In the first line, n and m space separated.
+In next m lines, three integers u, v, w. Representing an edge between u and v, with weight of w.

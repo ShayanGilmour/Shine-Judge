@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/mainV6.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism.css" />
+    <script src="/css/prism.js"></script>
+    <link rel="shortcut icon" href="/pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="/pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.2</b></font></center><br>
+
+        <br><center><font size=6 style="font-family: 'Times New Roman'"><b>Borna's</b></font></center>
+        
+        <div class="codeArea">
+            <div class="code">
+                <pre>
+                <code class="language-py hide" style="border-radius:3px;">
+def contents(file_name):
+    result = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            result.append(line.replace("\n",""))
+    return result
+def csvExtractor(datalines):
+    data = list()
+    for l in datalines:
+        data.append(l.split(","))
+    for i in range(len(data)):
+        haveq = [False for _ in range(len(data[i]))]
+        for j in range(len(data[i])):
+            if data[i][j].count("\"") == 1:
+                haveq[j] = 1
+        for j in range(len(data[i])):
+            if haveq[j]:
+                while not haveq[j+1]:
+                    data[i] = data[i][:j] + [data[i][j] + "," + data[i][j+1]] + data[i][j+2:]
+                    haveq.pop(j+1)
+                else:
+                    data[i] = data[i][:j] + [data[i][j] + "," + data[i][j+1]] + data[i][j+2:]
+                    data[i][j] = data[i][j][1:-1]
+                    break
+                    
+
+    return data
+def sortCol(data,max_width):
+    maxCol = [0] * len(data[0])
+    j = 0
+    for l in data:
+        for i in range(len(l)):
+            if maxCol[i] < len(l[i]):
+                maxCol[i] = len(l[i])
+            if maxCol[i] >= max_width:
+                maxCol[i] = max_width
+        j+=1
+        
+            
+    return maxCol
+def printLine(maxcol,max_width):
+    pline = "+"
+    pline += "".ljust(sum(maxcol) + len(maxcol) - 1,"-") + "+"
+    print(pline)
+def printTitle(titles,maxcol,max_width):
+    printLine(maxcol,max_width)
+    LineNum = 1
+    for item in titles:
+        if len(item) / max_width - LineNum > 0:
+            LineNum += int(len(item) / max_width - LineNum) + 1
+    if LineNum == 1:
+        pline = "|"
+        for i in range(len(titles)):
+            pline += titles[i].ljust(maxcol[i]) + "|"
+        print(pline)
+    else:
+        tmps = list()
+        for _ in range(LineNum):
+            tmps.append("|")
+        for i in range(LineNum):
+            for j in range(len(titles)):
+                length = maxcol[j]
+                if maxcol[j]*i >= len(titles[j]) or maxcol[j] + i*maxcol[j] >= len(titles[j]):
+                    length = len(titles[j]) - (i-1)*maxcol[j]
+                tmps[i] += titles[j][i*maxcol[j]:length + i*maxcol[j]].ljust(maxcol[j]) + "|"
+            print(tmps[i])
+    printLine(maxcol,max_width)
+def printData(data,maxcol,max_width):
+    data = data[1:]
+    for l in data:
+        LineNum = 1
+        for item in l:
+            if len(item) / max_width - LineNum > 0:
+                LineNum += int(len(item) / max_width - LineNum) + 1
+        if LineNum == 1:
+            pline = "|"
+            for i in range(len(l)):
+                pline += l[i].ljust(maxcol[i]) + "|"
+            print(pline)
+        else:
+            tmps = list()
+            for _ in range(LineNum):
+                tmps.append("|")
+            for i in range(LineNum):
+                for j in range(len(l)):
+                    length = maxcol[j]
+                    if maxcol[j]*i >= len(l[j]) or maxcol[j] + i*maxcol[j] >= len(l[j]):
+                        length = len(l[j]) - (i-1)*maxcol[j]
+                    tmps[i] += l[j][i*maxcol[j]:length + i*maxcol[j]].ljust(maxcol[j]) + "|"
+                print(tmps[i])
+        printLine(maxcol,max_width)
+
+filename = input()
+max_width = int(input())
+datalines = contents(filename)
+print(datalines)
+data = csvExtractor(datalines)
+print(data)
+maxcol = sortCol(data,max_width)
+printTitle(data[0],maxcol,max_width)
+printData(data,maxcol,max_width)
+
+		</code>
+                </pre>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>
+
+

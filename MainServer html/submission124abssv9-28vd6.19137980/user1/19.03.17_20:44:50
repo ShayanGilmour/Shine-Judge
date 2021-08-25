@@ -1,0 +1,126 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string lst4[10]={" ","twenty",
+				"thirty",
+				"forty",
+				"fifty",
+				"sixty",
+				"seventy",
+				"eighty",
+				"ninety",	
+				};
+				
+string lst3[10]={" ", "one",
+				"two",
+				"three",
+				"four",
+				"five",
+				"six",
+				"seven",
+				"eight",
+				"nine",	
+				};
+					
+string lst2[11]={
+				"ten",
+				"eleven",
+				"twelve",
+				"thirteen",
+				"fourteen",
+				"fifteen",
+				"sixteen",
+				"seventeen",
+				"eighteen",
+				"nineteen",
+				};
+				
+string lst1[30]={"thousand",
+				"million",
+				"billion",
+				"trillion",
+				"quadrillion",
+				"quintillion",
+				"sextillion",
+				"septillion",
+				"octillion",
+				"nonillion",
+				"decillion",
+				"undecillion",
+				"duodecillion",
+				"tredecillion",
+				"quattuordecillion",
+				"quindecillion",
+				"sexdecillion",
+				"septendecillion",
+				"octodecillion",
+				"novemdecillion",
+				"vigintillion",
+				"unvigintillion",
+				"duovigintillion",
+				"trevigintillion",
+				"quattuorvigintillion",
+				"quinvigintillion",
+				"sexvigintillion",
+				"septenvigintillion",
+				"octovigintillion",
+				"novemvigintillion",
+				};
+
+void f(string x){
+	if (x[0]!='0'){
+		cout << lst3[x[0]-48-1] << " " << "hundred" << " ";
+	}
+	if (x[1]=='1'){
+		cout << lst2[x[2]-48] ;
+	}
+	if (x[1]=='0'){
+		cout << lst3[x[2]-48] ;
+	}
+	if (x[1]!='1' && x[1]!='0'){
+		cout << lst4[x[1]-48-1] << " " << lst3[x[2]-48] ;
+	}
+}
+
+string g(string y){
+	int n = y.length();
+	if(n%3==1){
+		y = "00" + y;
+	}
+	if(n%3==2){
+		y = "0" + y;
+	}
+	return y;
+}
+
+
+int main(){
+	string a;
+	cin >> a;
+	int t=0;
+	for(int u=0; u<a.length(); u++){
+		if(a[u]=='0'){
+			t++;
+		}
+	}
+	if(t==a.length()){
+		cout << "zero" << endl;
+	}
+	else{
+		string b = g(a);
+		int n=b.length();
+		int i=0;
+		string lst[n/3];
+		while(i!=b.length()){
+			lst[i/3]=b.substr(i, 3);
+			i=i+3;
+		}
+		for (int j=0; j<n/3; j++){
+			f(lst[j]);
+			if(lst[j]!="000" && (n/3)-j-2>=0){
+				cout << " " << lst1[(n/3)-j-2] << " ";
+			}
+		}
+		cout << endl;
+	}
+}

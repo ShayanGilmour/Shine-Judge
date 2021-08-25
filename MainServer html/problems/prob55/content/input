@@ -1,0 +1,3 @@
+In the first line you're given 4 numbers; n, m, p, q.
+Then you'll be given a n x m matrix named A.
+Then a p x q matrix named B.

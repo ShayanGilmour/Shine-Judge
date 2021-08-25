@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shine Judge</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/mainV6.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/prism.css" />
+    <script src="/css/prism.js"></script>
+    <link rel="shortcut icon" href="/pictures/logo_favicon.png">
+
+</head>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<body>
+    <div class="header">
+        <h1>Shine Judge</h1>
+    </div>
+    <div class="container">
+        <div class="blank"></div>
+        <div class="MediumLogo">
+            <a>
+            <img src="/pictures/logo_main.png" onclick="goBack()">
+            </a>
+        </div>
+        <center><font size=6 style="font-family: 'Times New Roman'"><b>Project 1.2</b></font></center><br>
+
+        <br><center><font size=6 style="font-family: 'Times New Roman'"><b>Asha's</b></font></center>
+        
+        <div class="codeArea">
+            <div class="code">
+                <pre>
+                <code class="language-py hide" style="border-radius:3px;">
+
+
+def getContents(file_name):
+    result = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            result.append(lineBreaker(line[:-1]))
+    return result
+def lineBreaker(inputStr):
+#breakes every line into columns
+    result=[]
+    cotFlag=False
+    lastCam=-1
+    for i in range(len(inputStr)):
+        if(inputStr[i]=='\"'):
+            if(cotFlag==True):
+                result.append(inputStr[lastCam+1:i])
+                lastCam=i+1
+                cotFlag=False
+            else:
+                cotFlag=True
+        elif(inputStr[i]==',' and cotFlag==False and i!=lastCam):
+            result.append(inputStr[lastCam+1:i])
+            lastCam=i
+    result.append(inputStr[lastCam+1:])
+    return result  
+def printEmptyLine(a):
+    print('+',end='')
+    for i in range(a-2):
+        print('-',end='')
+    print('+')
+def printContent(maxWidth,fullWidth,contents,width):
+    if(maxWidth>=fullWidth):
+        for content in contents:
+            printEmptyLine(fullWidth)
+            for i in range(len(content)):
+                print("|",content[i].ljust(width[i]," "),end="",sep='')
+            print('|')
+        printEmptyLine(fullWidth)
+    else:
+        #bl=BreakedLine
+        bl=0
+        for i in range(len(width)):
+            #find bl
+            if(width[i]>width[bl]):
+                bl=i
+        #bl width is defferent
+        blWidth=width[bl]- (fullWidth-maxWidth)
+        print(bl,blWidth)
+        for content in contents:
+            printEmptyLine(maxWidth)
+            #first line
+            for i in range(len(content)):
+                if(i==bl):
+                    print("|",content[i][:blWidth].ljust(blWidth," "),end="",sep='')
+                else:
+                    print("|",content[i].ljust(width[i]," "),end="",sep='')
+            print('|')
+            ct=blWidth
+            while(ct<len(content[bl])):
+                for i in range(len(content)):
+                    if(i==bl):
+                        print("|",content[i][ct:ct+blWidth].ljust(blWidth," "),end="",sep='')
+                    else:
+                        print("|",''.ljust(width[i]," "),end="",sep='')
+                print('|')
+                ct+=blWidth
+        printEmptyLine(maxWidth)
+        
+
+inp='test1'
+maxWidth=int(input("Enter MaxWidth"))
+contents=getContents((inp+'.csv'))
+#width is the max width of every column
+width=[0 for i in contents[0]]
+fullWidth=0
+for i in range(len(width)):
+    for j in contents:
+        if(len(j[i])>width[i]):
+            width[i]=len(j[i])
+    fullWidth+=width[i]
+#full width is the width of the table
+fullWidth+=len(width)+1
+printContent(maxWidth,fullWidth,contents,width)
+
+		</code>
+                </pre>
+            </div>
+        </div>
+        <div class="blank"></div>
+    </div>
+</body>
+</html>
+
+

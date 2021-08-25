@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int n;
+char d1[] = {'I', 'X', 'C', 'M'};
+char d5[] = {'V', 'L', 'D', 'E'};
+
+void calc(int x, int l)
+{
+	int ll = l;
+	while (ll-- > 0)
+		x/=10;
+	x%=10;
+	
+	if (x <= 3)
+		while (x--)
+			cout << d1[l];
+
+	else if (x == 4)
+		cout << d1[l] << d5[l];
+	
+	else if (x and x < 9)
+	{
+		cout << d5[l];
+		x -= 5; 
+		while (x--)
+			cout << d1[l];
+	}
+
+	else if (x == 9)
+		cout << d1[l] << d1[l+1];
+	
+
+}
+
+int main()
+{
+	cin >> n;
+	for (int j = 3; j >= 0; --j)
+		calc(n, j);
+}

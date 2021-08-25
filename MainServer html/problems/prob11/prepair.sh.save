@@ -1,0 +1,23 @@
+#!/bin/bash
+echo "${PWD##*/}" >> /var/www/html/Log
+
+rm -r /var/www/html/startup/
+mkdir /var/www/html/startup/
+
+cp inpans.zip /var/www/html/startup/
+cp /var/www/html/problems/a, p, c, l = input().split()
+a = int(a)
+p = int(p)
+c = int(c)
+l = int(l)
+
+a = a/3600;
+
+ans = a*c*p;
+
+if (a >= l):
+	ans = ans + (a-l)*c*p;
+
+print(ans)/judge.sh /var/www/html/startup/
+mv code.py /var/www/html/startup/
+

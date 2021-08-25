@@ -1,0 +1,26 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+#include <string>
+using std::string;
+
+void ClearString(string str)
+{
+	for ( int counter = 0; counter <= str.length(); counter++ )
+	{
+		if ( isalpha(str[counter]) )
+			cout << str[counter];
+	}
+	cout << endl;
+}
+
+int main()
+{
+	string str;
+	cout << "Enter your string please: ";
+	cin >> str;
+	ClearString( str );
+	return 0;
+}

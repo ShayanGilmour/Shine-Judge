@@ -1,0 +1,7 @@
+#Prob17
+import random
+a = int(input())
+b = 0
+for i in range(a):
+    b = max(b, random.uniform(0, 1))
+print(b)

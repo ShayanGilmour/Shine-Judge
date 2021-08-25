@@ -1,0 +1,2 @@
+You'll be given an string (may contain spaces.)
+Delete all the non-digit characters. Print the remaining string in reverse.

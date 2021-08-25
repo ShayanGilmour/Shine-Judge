@@ -1,0 +1,3 @@
+You'll be given an integer.
+Print all the sequences of length 2n containing '(' and ')' which from left to right, never the number of ')'s exceeds the number of '('s.
+And the number of '('s and ')'s are equal at total.

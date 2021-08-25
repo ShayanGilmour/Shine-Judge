@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+char table[] =
+	{'a', 'b', 'j', 'd', 'h', 'v', 'z', 'H', 't',
+	 'y', 'k', 'l', 'm', 'n', 's', 'a', 'f', 's',
+	 'G', 'r', 'S', 't', 's', 'K', 'z', 'z', 'z'};
+
+int calc(string a)
+{
+	if (a == "gh")
+		a[0] = 'G';
+	if (a == "kh")
+		a[0] = 'K';
+	if (a == "sh")
+		a[0] = 'S';
+
+	for (int i = 0; true; ++i)
+		if (a[0] == table[i])
+		{
+			i++;
+			if (i < 10)
+				return i;
+
+			i-=9;
+			if (i < 10)
+				return i*10;
+
+			i-=9;
+			return i*100;
+		}
+}
+
+int main()
+{
+	string s;
+	cin >> s;
+	int ans = 0;
+	for (int i = 0; i < s.size(); ++i)
+		if (s[i] == 'o')
+			s[i] = 'v';
+
+	for (int i = 0; i < s.size(); i+=2)
+		ans += calc(s.substr(i, 2));
+
+	cout << ans << endl;
+}

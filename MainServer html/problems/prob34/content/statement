@@ -1,0 +1,2 @@
+You'll be given two integers N and Type.
+If Type = 2 then you'll be given an integer P <= N! then you should print its subset; Otherwise you'll be given a size then a subset of {1, 2, 3, ..., N} with length size, and you should print its number.

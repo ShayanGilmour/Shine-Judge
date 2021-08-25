@@ -1,0 +1,4 @@
+Get N. Print ans(N).
+sum(n): Sum of the digits of the number n.
+If n < 10, ans(n) = n.
+If n > 9, ans(n) = ans(sum(n)).

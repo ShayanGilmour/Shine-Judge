@@ -1,0 +1,2 @@
+In each line print the character first, then print the number of times it's repeated in the given string.
+The characters must be sorted by their unicode.

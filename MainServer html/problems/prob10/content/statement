@@ -1,0 +1,7 @@
+Get id and x.
+Print [Even(id) + Odd(id)*x] for some reasons!
+
+Odd(id): Delete the numbers in even indices.
+Even(id): Detele the numbers in odd indices.
+
+The digits are numbered from 0 to 8 from left to right.
