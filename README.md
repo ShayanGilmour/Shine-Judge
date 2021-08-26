@@ -41,7 +41,7 @@ It accepts the correct code:
 
 And if i replace "max" with "min", it won't accept the code! Not because it searches for the word `min` in the code, but, it uses probablity and figures it's very unlikely for the output to be correct.
 
-### Main Features:
+### Features:
 + The clients can see their accepted codes
 + They admins have different permissions. For example the professors can add or edit their questions
 + Professors can take quizes from particular students in the site
@@ -53,11 +53,20 @@ And if i replace "max" with "min", it won't accept the code! Not because it sear
 
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/12760574/130936508-1986a55a-e908-4ecb-aa3b-a730a6689559.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130936513-90513e8f-acc0-4a54-82f9-3fffd00a1746.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130936516-4d491330-4a0f-4297-901d-e1ef4dd57db3.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015733-88c01f44-69ac-4e69-b3f2-6ad7c338212e.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015741-5488c28c-e4ea-4302-acc7-da3a14ac5527.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015743-1bb3ec9f-d836-4361-b1c4-acc68807e7f8.png" height="400" />
 </p>
 
+
 ### Security:
+As I mentioned, I've made this site without any framework or et cetera and at the time, I didn't have any knowledge of security. This site is not completely secure, and as I've wrote in the site, **Clients Must NOT use Important Passwords** for their account. The site saved the passwords, without any hashing. The directories with some "code" after their name, is important directories, and by having some difficult postfix after their name, it makes a a little bit more secure. 
 
 ### Installation:
+You'll need 2 (virual) servers. One main server, another just for running codes. Install the following on both of them:
++ Apache2
++ php
++ G++
++ Python3
++ 
+Then place the files in each server.
