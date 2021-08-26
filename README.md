@@ -69,4 +69,11 @@ You'll need 2 (virual) servers. One main server, another just for running codes.
 + G++
 + Python3
 + 
-Then place the files in each server.
+Then place the files in each server. Then run the following command. (Replace `Server1IP` with the IP of the main server), and `Server2IP` with the executer server's ip.
+
+```
+grep -rl 'MainIP' ./ | xargs sed -i 's/MainIP/Server1IP/g'
+grep -rl 'ExecuterIP' ./ | xargs sed -i 's/ExecuterIP/Server2IP/g'
+````
+
+Run these commands in both of the servers **after** setting up the files.
