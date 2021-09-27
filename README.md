@@ -60,7 +60,7 @@ And if i replace "max" with "min", it won't accept the code! Not because it sear
 
 
 ### Security:
-As I mentioned, I've made this site without any framework or et cetera and at the time, I didn't have any knowledge of security. This site is not completely secure, and as I've wrote in the site, **Clients Must NOT use Important Passwords** for their account. The site saved the passwords, without any hashing. The directories with some "code" after their name, is important directories, and by having some difficult postfix after their name, it makes a a little bit more secure. 
+As I mentioned, I've made this site without any framework or et cetera and at the time, I didn't have any knowledge of security. This site is not completely secure, and as I've wrote in the site, **Clients Must NOT use Important Passwords** for their account. The site saves the passwords, without any hashing. The directories with some "code" after their name, is important directories, and by having some difficult postfix after their name, it makes a a little bit more secure. 
 
 ### Installation:
 You'll need 2 (virual) servers. One main server, another just for running codes. Install the following on both of them:
