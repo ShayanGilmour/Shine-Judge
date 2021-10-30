@@ -10,25 +10,25 @@ This site runs on Apache2 server. There are 2 servers which make this site possi
 The main page looks like _left_ figure. Then the in the problem sections, for different programming languages, there are some questions placed in different sections (levels). In each section, there are the name of the questions.
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/12760574/130933899-2a7ee1e9-1481-4661-bc4d-a96c553f96a4.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130933906-3cf16ede-e386-4163-abfa-f0180b3a05e1.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130933909-986ace39-4efd-4042-a652-88b0abfe7470.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/130933899-2a7ee1e9-1481-4661-bc4d-a96c553f96a4.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130933906-3cf16ede-e386-4163-abfa-f0180b3a05e1.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130933909-986ace39-4efd-4042-a652-88b0abfe7470.png" height="300" />
 </p>
 
 The for every question, there's the statement of the question, the syntax of the input and output, and some sample input/output. The username and password must be entered as well. Then, the site (second server) will judge the code and get your the results:
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/12760574/130935483-c0f2f959-a9f6-4c79-83ed-07d3d537c609.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130935505-0347b683-5655-42ad-a55b-2f967c2ee796.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130935524-cb2feb74-d429-4e95-81f3-bf7270ce9569.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/130935483-c0f2f959-a9f6-4c79-83ed-07d3d537c609.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130935505-0347b683-5655-42ad-a55b-2f967c2ee796.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130935524-cb2feb74-d429-4e95-81f3-bf7270ce9569.png" height="300" />
 </p>
 
 And if the code performs incorrectly or doesn't compile, or exceeds the time limit, the results would be something like these:
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/12760574/130936508-1986a55a-e908-4ecb-aa3b-a730a6689559.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130936513-90513e8f-acc0-4a54-82f9-3fffd00a1746.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/130936516-4d491330-4a0f-4297-901d-e1ef4dd57db3.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/130936508-1986a55a-e908-4ecb-aa3b-a730a6689559.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130936513-90513e8f-acc0-4a54-82f9-3fffd00a1746.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/130936516-4d491330-4a0f-4297-901d-e1ef4dd57db3.png" height="300" />
 </p>
 
 As mentioned, **any** kind of checker can be made for this judge. For instance, one of the "unusual" question/checker that this site has, is the one that states: "You're given integer `n`. Generate `n` random floats in range (0, 1) and print the maximum of them." As this question has probablity in it, and there's no actual right output, ordinary checker can't work for this question. But the checker for this quesiton is present in the site. This checker checks if the code always outputs the same number. Also, it uses probablity to disqualify the "wrong" codes:
@@ -53,9 +53,9 @@ And if i replace "max" with "min", it won't accept the code! Not because it sear
 
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/12760574/131015733-88c01f44-69ac-4e69-b3f2-6ad7c338212e.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/131015741-5488c28c-e4ea-4302-acc7-da3a14ac5527.png" height="400" />
-  <img src="https://user-images.githubusercontent.com/12760574/131015743-1bb3ec9f-d836-4361-b1c4-acc68807e7f8.png" height="400" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015733-88c01f44-69ac-4e69-b3f2-6ad7c338212e.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015741-5488c28c-e4ea-4302-acc7-da3a14ac5527.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/12760574/131015743-1bb3ec9f-d836-4361-b1c4-acc68807e7f8.png" height="300" />
 </p>
 
 
