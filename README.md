@@ -77,3 +77,10 @@ grep -rl 'ExecuterIP' ./ | xargs sed -i 's/ExecuterIP/Server2IP/g'
 ````
 
 Run these commands in both of the servers **after** setting up the files.
+
+#### Update:
+Automatic MATLAB code judge.
+This judge compares the submitted codes to the corresponding correct answer and calculates the similarity between them.
+This code automatically unzips the submitted homework of each student and finds student ID and it separately grades the codes and the report (pdf). The MATLAB judge isn't foolproof since it doesn't run any of the codes; It only compares the source codes. This is useful when there are a lot of students who are submitting MATLAB codes.
+
+Each student must submit their codes along with a report in a zip file. Put all of the zip files in a directory and run this code. Not only it grades each homework, but it also write some comments for each of the students.
